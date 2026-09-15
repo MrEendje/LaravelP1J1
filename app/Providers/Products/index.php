@@ -1,15 +1,15 @@
 <?php
 
-namespace App\Http\ders\Products;
-use Illuminate\Support\Facades\DB;
-use Illuminate\View\View;
+namespace App\Providers\Products;
+
+use App\Models\Product;
 
 class index
 {
     public function Index()
     {
-        $products = DB::table('products')->get();
+        $products = Product::all();
 
-        return view('products.Index', ['products' => $products]);
+        return $products->toArray();
     }
 }

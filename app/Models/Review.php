@@ -4,9 +4,13 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class review extends Model
+class Review extends Model
 {
-    public $comment = "";
-    public $user_id = 0;
-    public $product_id = 0;
+    public $timestamps = false;
+
+    protected $fillable = [
+        'comment',
+        'user_id',
+        'product_id',
+    ];
 }

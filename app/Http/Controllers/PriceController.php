@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Providers\Products\index;
+use App\Providers\Prices\index;
 
-class ProductController extends Controller
+class PriceController extends Controller
 {
     public function index()
     {

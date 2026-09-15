@@ -6,7 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Price extends Model
 {
-    public $price = 0;
-    public $effdate = "";
-    public $productid = 0;
+    public $timestamps = false;
+
+    protected $fillable = [
+        'price',
+        'effdate',
+        'productid',
+    ];
 }
