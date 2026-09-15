@@ -1,44 +1,7 @@
-<!DOCTYPE html>
-<html lang="nl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+@extends('layouts.app')
 
-    <title>Spel App</title>
-</head>
-<body>
+@section('title', 'Spel App')
 
-    <h1>Spel App</h1>
-
-    <nav>
-        <ul>
-            <li>
-                <a href="{{ route('categories.index') }}">
-                    Categories
-                </a>
-            </li>
-            <li>
-                <a href="{{ route('products.index') }}">
-                    Products
-                </a>
-            </li>
-            <li>
-                <a href="{{ route('prices.index') }}">
-                    Prices
-                </a>
-            </li>
-            <li>
-                <a href="{{ route('reviews.index') }}">
-                    Reviews
-                </a>
-            </li>
-            <li>
-                <a href="{{ route('roles.index') }}">
-                    Roles
-                </a>
-            </li>
-        </ul>
-    </nav>
-
-</body>
-</html>
+@section('content')
+    <p>Welkom bij de Spel App. Gebruik het menu hierboven om de gegevens te bekijken.</p>
+@endsection

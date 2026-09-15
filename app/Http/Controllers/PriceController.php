@@ -9,6 +9,9 @@ class PriceController extends Controller
     public function index()
     {
         $index = new index();
-        return $index->Index();
+
+        return view('prices.index', [
+            'prices' => $index->Index(),
+        ]);
     }
 }

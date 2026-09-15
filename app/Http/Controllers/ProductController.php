@@ -9,6 +9,9 @@ class ProductController extends Controller
     public function index()
     {
         $index = new index();
-        return $index->Index();
+
+        return view('products.index', [
+            'products' => $index->Index(),
+        ]);
     }
 }

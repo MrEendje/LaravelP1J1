@@ -1,18 +1,24 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Spel App</h1>
+@extends('layouts.app')
 
-    <nav>
-        <ul>
-            <li>
-                <a href="{{  route('roles.index') }}"></a>
-            </li>
-        </ul>
-    </nav>
-</body>
-</html>
+@section('title', 'Roles')
+
+@section('content')
+    <h2>Roles</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Naam</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach ($roles as $role)
+                <tr>
+                    <td>{{ $role['id'] }}</td>
+                    <td>{{ $role['name'] }}</td>
+                </tr>
+            @endforeach
+        </tbody>
+    </table>
+@endsection

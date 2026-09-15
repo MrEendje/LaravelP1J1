@@ -9,6 +9,9 @@ class ReviewController extends Controller
     public function index()
     {
         $index = new index();
-        return $index->Index();
+
+        return view('reviews.index', [
+            'reviews' => $index->Index(),
+        ]);
     }
 }

@@ -9,6 +9,9 @@ class CategoryController extends Controller
     public function index()
     {
         $index = new index();
-        return $index->Index();
+
+        return view('categories.index', [
+            'categories' => $index->Index(),
+        ]);
     }
 }

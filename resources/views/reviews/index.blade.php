@@ -1,18 +1,28 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Spel App</h1>
+@extends('layouts.app')
 
-    <nav>
-        <ul>
-            <li>
-                <a href="{{  route('reviews.index') }}"></a>
-            </li>
-        </ul>
-    </nav>
-</body>
-</html>
+@section('title', 'Reviews')
+
+@section('content')
+    <h2>Reviews</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Opmerking</th>
+                <th>Gebruiker ID</th>
+                <th>Product ID</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach ($reviews as $review)
+                <tr>
+                    <td>{{ $review['id'] }}</td>
+                    <td>{{ $review['comment'] }}</td>
+                    <td>{{ $review['user_id'] }}</td>
+                    <td>{{ $review['product_id'] }}</td>
+                </tr>
+            @endforeach
+        </tbody>
+    </table>
+@endsection

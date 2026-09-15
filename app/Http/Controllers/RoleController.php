@@ -9,6 +9,9 @@ class RoleController extends Controller
     public function index()
     {
         $index = new index();
-        return $index->Index();
+
+        return view('roles.index', [
+            'roles' => $index->Index(),
+        ]);
     }
 }

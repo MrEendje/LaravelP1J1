@@ -1,18 +1,28 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Spel App</h1>
+@extends('layouts.app')
 
-    <nav>
-        <ul>
-            <li>
-                <a href="{{  route('prices.index') }}"></a>
-            </li>
-        </ul>
-    </nav>
-</body>
-</html>
+@section('title', 'Prices')
+
+@section('content')
+    <h2>Prices</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Prijs</th>
+                <th>Ingangsdatum</th>
+                <th>Product ID</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach ($prices as $price)
+                <tr>
+                    <td>{{ $price['id'] }}</td>
+                    <td>{{ $price['price'] }}</td>
+                    <td>{{ $price['effdate'] }}</td>
+                    <td>{{ $price['productid'] }}</td>
+                </tr>
+            @endforeach
+        </tbody>
+    </table>
+@endsection

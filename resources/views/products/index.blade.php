@@ -1,18 +1,28 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Spel App</h1>
+@extends('layouts.app')
 
-    <nav>
-        <ul>
-            <li>
-                <a href="{{  route('products.index') }}"></a>
-            </li>
-        </ul>
-    </nav>
-</body>
-</html>
+@section('title', 'Products')
+
+@section('content')
+    <h2>Products</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Naam</th>
+                <th>Omschrijving</th>
+                <th>Categorie ID</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach ($products as $product)
+                <tr>
+                    <td>{{ $product['id'] }}</td>
+                    <td>{{ $product['name'] }}</td>
+                    <td>{{ $product['description'] }}</td>
+                    <td>{{ $product['categoryId'] }}</td>
+                </tr>
+            @endforeach
+        </tbody>
+    </table>
+@endsection
